@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyInjectedController {
 
+    // if we delete qualifier we will get service from primary bean
     @Qualifier("propertyInjectionGreetingService")
     @Autowired
     public GreetingService greetingService;
