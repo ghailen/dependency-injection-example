@@ -2,12 +2,11 @@ package com.ghailene.dependencyinjection.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-
-@Profile({"ES","default"})
+@Profile("EN")
 @Service("i18nService")
-public class I18NSpanishService implements GreetingService{
+public class I18EnglishGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Hola mundo - ES";
+        return "Hello World -EN";
     }
 }
