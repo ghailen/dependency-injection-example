@@ -13,9 +13,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 //@PropertySource("classpath:datasource.properties")
 /** those 2 is for multiple property files **/
 //@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})
-@PropertySources({
+/*@PropertySources({
         @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")})
+        @PropertySource("classpath:jms.properties")})*/
 public class PropertyConfig {
 
     @Value("${guru.username}")
@@ -50,12 +50,14 @@ public class PropertyConfig {
         return fakeJmsSource;
     }
 
+    /** delete if we use only application properties not others **/
+/*
     @Bean
     public static PropertySourcesPlaceholderConfigurer properties() {
 
         PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
         return propertySourcesPlaceholderConfigurer;
 
-    }
+    }*/
 
 }
