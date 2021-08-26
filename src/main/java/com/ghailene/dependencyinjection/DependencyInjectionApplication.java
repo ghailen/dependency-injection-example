@@ -1,6 +1,7 @@
 package com.ghailene.dependencyinjection;
 
 import com.ghailene.dependencyinjection.controllers.*;
+import com.ghailene.dependencyinjection.examplebeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,9 +11,9 @@ public class DependencyInjectionApplication {
 
     public static void main(String[] args) {
 
-        ApplicationContext ctx= SpringApplication.run(DependencyInjectionApplication.class, args);
+        ApplicationContext ctx = SpringApplication.run(DependencyInjectionApplication.class, args);
 
-        I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+     /*   I18nController i18nController = (I18nController) ctx.getBean("i18nController");
         System.out.println(i18nController.sayHello());
 
         MyController myController=(MyController) ctx.getBean("myController");
@@ -34,7 +35,12 @@ public class DependencyInjectionApplication {
 
         System.out.println("-------- Constructor");
         ConstructorInjectedController constructorInjectedController =(ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-        System.out.println(constructorInjectedController.getGreeting());
+        System.out.println(constructorInjectedController.getGreeting());*/
+
+/** it will show john **/
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+        System.out.println(fakeDataSource.getUser() );
+
     }
 
 }
