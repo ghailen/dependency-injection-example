@@ -2,6 +2,7 @@ package com.ghailene.dependencyinjection;
 
 import com.ghailene.dependencyinjection.controllers.*;
 import com.ghailene.dependencyinjection.examplebeans.FakeDataSource;
+import com.ghailene.dependencyinjection.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -41,6 +42,8 @@ public class DependencyInjectionApplication {
         FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
         System.out.println(fakeDataSource.getUser() );
 
+        FakeJmsBroker fakeJmsBroker= (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+        System.out.println(fakeJmsBroker.getJmsUsername());
     }
 
 }
